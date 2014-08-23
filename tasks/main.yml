@@ -1,0 +1,20 @@
+- name: install zsh
+  sudo_user: root
+  sudo: true
+  apt: name=zsh state=installed
+
+- name: use shell env
+  shell: chsh -s /bin/zsh
+
+## ZSH
+- name: Clone Oh My Zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
+
+- name: clone shingara dotfile
+  git: repo=https://github.com/shingara/dotfile.git dest=~/dotfile
+
+- name: link gitconfig file
+  file: state=link src=~/dotfile/gitconfig path=~/.gitconfig
+
+- name: link zshrc file
+  file: state=link src=~/dotfile/zshrc path=~/.zshrc
