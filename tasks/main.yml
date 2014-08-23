@@ -4,7 +4,6 @@
   apt: name=zsh state=installed
 
 - name: use shell env
-  shell: chsh -s /bin/zsh
   sudo_user: root
   sudo: true
   user: name={{ ansible_user_id }} shell=/bin/zsh
