@@ -5,6 +5,9 @@
 
 - name: use shell env
   shell: chsh -s /bin/zsh
+  sudo_user: root
+  sudo: true
+  user: name={{ ansible_user_id }} shell=/bin/zsh
 
 ## ZSH
 - name: Clone Oh My Zsh
