@@ -20,3 +20,9 @@
 
 - name: link zshrc file
   file: state=link src=~/dotfile/zshrc path=~/.zshrc
+
+- name: source profile zsh
+  lineinfile:
+    dest: ~/.zprofile
+    line: 'source /etc/profile'
+    create: yes
