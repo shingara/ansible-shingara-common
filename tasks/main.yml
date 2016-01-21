@@ -1,11 +1,11 @@
 - name: install zsh
-  sudo_user: root
-  sudo: true
+  become_user: root
+  become: true
   apt: name=zsh state=installed
 
 - name: use shell env
-  sudo_user: root
-  sudo: true
+  become_user: root
+  become: true
   user: name={{ ansible_user_id }} shell=/bin/zsh
 
 ## ZSH
